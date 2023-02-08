@@ -14,7 +14,7 @@ record_session(shiny_url)
 
 # run tests ---------------------------------------------------------------
 
-cmd_str <- r"{java -jar .\%s recording.log %s --workers %s --loaded-duration-minutes %s --output-dir %s}"
+cmd_str <- r"{java -jar .\%s recording.log %s --workers %s --loaded-duration-minutes %s --output-dir %s --overwrite-output}"
 shinycannon_loc <- "shinycannon-1.1.3.jar"
 total_workder <- 5
 time_duration_min <- 5
@@ -30,7 +30,8 @@ shinycannon_cmd <- sprintf(
 )
 
 system2(
-  command = shinycannon_cmd,
+  command = "pwsh.exe",
+  input = shinycannon_cmd,
   stdout = TRUE,
   wait = TRUE,
   invisible = FALSE
@@ -38,6 +39,9 @@ system2(
 
 # analysis  ---------------------------------------------------------------
 
-load_df <- shinyloadtest::load_runs("run1")
+load_df <- load_runs(folder_name)
 
-shinyloadtest::shinyloadtest_report(load_df, "run1.html")
+load_df |>
+  shinyloadtest_report(
+    paste0(folder_name, ".html")
+  )

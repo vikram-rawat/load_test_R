@@ -1,0 +1,9 @@
+# http://127.0.0.1:6568 --workers 5 --loaded-duration-minutes 5 --output-dir run --overwrite-output
+# {"appUrl":"http://127.0.0.1:6568","debugLog":false,"loadedDurationMinutes":5.0,"logLevel":"WARN","outputDir":"run","overwriteOutput":true,"recordingPath":"recording.log","workers":5}
+session_id,worker_id,iteration,event,timestamp,input_line_number,comment
+9,4,1,PLAYER_SESSION_CREATE,1675836307323,0,
+9,4,1,REQ_HOME_START,1675836307323,4,
+9,4,1,REQ_HOME_END,1675836328643,4,
+9,4,1,REQ_GET_START,1675836328643,5,
+9,4,1,REQ_GET_END,1675836329622,5,
+9,4,1,WS_OPEN_START,1675836329622,6,
