@@ -52,3 +52,5 @@ rsconnect/
 
 run/
 run/*~
+
+test-logs*

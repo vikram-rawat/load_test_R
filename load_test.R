@@ -2,11 +2,12 @@
 # load libraries ----------------------------------------------------------
 library(shinyloadtest)
 library(data.table)
+library(collapse)
 
 # set defaults ------------------------------------------------------------
 
-# url <- "https://connect.appsilon.com/ethz-test/"
-shiny_url <- "http://127.0.0.1:6568"
+shiny_url <- "https://connect.appsilon.com/ethz-test/"
+# shiny_url <- "http://127.0.0.1:6568"
 
 # record tests -----------------------------------------------------------------
 
